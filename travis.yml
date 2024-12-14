@@ -1,0 +1,9 @@
+language: python
+python:
+  - "3.8"  # Versión de Python
+
+before_script:
+  - echo "Preparando entorno para pruebas..."  # Mensaje antes de iniciar las pruebas
+
+script:
+  - python -m unittest discover -s test  # Comando para ejecutar las pruebas
