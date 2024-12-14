@@ -1,0 +1,24 @@
+name: Test Selenium
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  prueba: 
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: actions/checkout@v2
+    - name: configurar python
+      uses: actions/septup-python@v2
+      with:
+        python-version: "3.10"
+    - name: install dependencias 
+      run: |
+        python -m pip install --upgrade pip
+    - name: run pruebas unitarias 
+      run: |
+        python -m unittest discover -s test
+    - name: ready for deploy 
+      run: echo "Listo"
